@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "snakemake-monitoring-plugin-wms"
+version = "0.1.0"
+description = ""
+authors = ["Cade Mirchandani <cmirchan@ucsc.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+snakemake-interface-common = "^1.12.0"
+snakemake-interface-monitoring-plugins = { "git" = "https://github.com/cademirch/snakemake-interface-monitoring-plugins.git" }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
