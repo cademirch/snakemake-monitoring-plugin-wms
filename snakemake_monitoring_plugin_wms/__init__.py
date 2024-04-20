@@ -29,10 +29,9 @@ class MonitoringProvider(MonitoringProviderBase):
     def __post_init__(self):
         self.token = os.getenv("WMS_MONITOR_TOKEN")
         self.address = self.settings.host
-        self.args = []
-        self.args = {item[0]: item[1] for item in list(self.args)}
+        self.metadata = self.settings.metadata
+        self.args = {k: v for k, v in self.metadata.items() if k != "command"}
 
-        self.metadata = {}
         self.service_info()
 
         # Create or retrieve the existing workflow
