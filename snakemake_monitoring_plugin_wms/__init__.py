@@ -30,7 +30,8 @@ class MonitoringProvider(MonitoringProviderBase):
         self.token = os.getenv("WMS_MONITOR_TOKEN")
         self.address = self.settings.host
         self.metadata = self.settings.metadata
-        self.args = {k: v for k, v in self.metadata.items() if k != "command"}
+        # Not great forcing to str, but needed to make json.dumps happy.
+        self.args = {k: str(v) for k, v in self.metadata.items() if k != "command"}
 
         self.service_info()
 
