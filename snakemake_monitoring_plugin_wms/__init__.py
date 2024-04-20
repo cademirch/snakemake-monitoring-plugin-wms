@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Any, Iterable, List, Optional
+from typing import Optional
 
 from snakemake_interface_monitoring_plugins.settings import (
     MonitoringProviderSettingsBase,
